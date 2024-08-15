@@ -19,14 +19,4 @@ jobs:
       run: npm install
 
     - name: Deploy to Render
-      uses: render-action/render-deploy@v1
-      with:
-        service-id: ${{ secrets.RENDER_SERVICE_ID }}
-        api-key: ${{ secrets.RENDER_API_KEY }}
-
-    - name: Upload Deployment Report
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: deploy-report
-        path: deploy-report/
+      run: curl -X POST ${{ secrets.RENDER_DEPLOY_URL }}
