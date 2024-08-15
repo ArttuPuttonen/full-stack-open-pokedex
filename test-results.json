@@ -10,7 +10,9 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {},
+    "metadata": {
+      "actualWorkers": 1
+    },
     "preserveOutput": "always",
     "reporter": [
       [
@@ -51,22 +53,67 @@
     "workers": 4,
     "webServer": {
       "command": "npm run start",
-      "port": 3000,
+      "port": 8081,
       "timeout": 120000,
       "reuseExistingServer": true
     }
   },
-  "suites": [],
-  "errors": [
+  "suites": [
     {
-      "message": "Error: Process from config.webServer exited early.",
-      "stack": "Error: Process from config.webServer exited early."
+      "title": "example.spec.js",
+      "file": "example.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Pokedex",
+          "file": "example.spec.js",
+          "line": 3,
+          "column": 1,
+          "specs": [
+            {
+              "title": "front page can be opened",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1703,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-08-15T08:45:46.895Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dd9b2edffe9b7501040c-f0e6764c98322d80f998",
+              "file": "example.spec.js",
+              "line": 4,
+              "column": 3
+            }
+          ]
+        }
+      ]
     }
   ],
+  "errors": [],
   "stats": {
-    "startTime": "2024-08-15T08:34:29.992Z",
-    "duration": 50314.999,
-    "expected": 0,
+    "startTime": "2024-08-15T08:45:44.530Z",
+    "duration": 5427.494,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
