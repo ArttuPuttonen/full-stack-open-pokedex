@@ -11,13 +11,13 @@ module.exports = defineConfig({
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
     video: 'on-first-retry',
-    baseURL: 'http://localhost:8080',
+    baseURL: 'http://localhost:5001',
   },
 
   webServer: {
     command: 'npm run start',
-    port: 8080,
-    timeout: 180 * 1000,
+    port: 5001,
+    timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
   },
 })
