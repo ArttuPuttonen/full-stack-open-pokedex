@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
+    "start": "webpack serve --mode development",
     "start-prod": "node app.js",
     "test": "jest test/jest",
     "test:e2e": "playwright test",
