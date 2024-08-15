@@ -9,7 +9,7 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 1,
+    "maxFailures": 0,
     "metadata": {
       "actualWorkers": 1
     },
@@ -44,13 +44,13 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 0
+        "timeout": 30000
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.46.0",
-    "workers": 1,
+    "workers": 4,
     "webServer": {
       "command": "npm run start",
       "port": 8081,
@@ -78,7 +78,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 0,
+                  "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "",
@@ -87,12 +87,12 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 14110,
+                      "duration": 801,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-08-15T08:55:46.681Z",
+                      "startTime": "2024-08-15T09:00:33.703Z",
                       "attachments": []
                     }
                   ],
@@ -111,8 +111,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-08-15T08:55:44.488Z",
-    "duration": 19316.087,
+    "startTime": "2024-08-15T09:00:31.480Z",
+    "duration": 4800.089,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
