@@ -21,6 +21,14 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --force  # This step is crucial
 
+    - name: Start the Server
+      run: npm start &
+      # This starts the server in the background, but we need to wait for it to be ready.
+
+    - name: Wait for Server to be Ready
+      run: npx wait-on http://localhost:5001
+      # Adjust the URL if your server runs on a different port or path.
+
     - name: Run Playwright E2E tests
       run: npx playwright test
 
