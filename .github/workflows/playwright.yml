@@ -8,33 +8,25 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4  # Use the latest version
+      uses: actions/checkout@v4
 
     - name: Set up Node.js
-      uses: actions/setup-node@v4  # Use the latest version
+      uses: actions/setup-node@v4
       with:
-        node-version: '20'  # Use Node.js 20
+        node-version: '20'
 
     - name: Install dependencies
       run: npm install
 
     - name: Install Playwright Browsers
-      run: npx playwright install --force  # This step is crucial
-
-    - name: Start the server
-      run: npm start &
-      env:
-        PORT: 5001
-
-    - name: Wait for server to be ready
-      run: npx wait-on http://localhost:5001
+      run: npx playwright install --force
 
     - name: Run Playwright E2E tests
-      run: npx playwright test --timeout=60000  # Increased timeout for tests
+      run: npx playwright test --timeout=60000
 
     - name: Upload Playwright Report
-      if: always()  
-      uses: actions/upload-artifact@v4  # Use the latest version
+      if: always()
+      uses: actions/upload-artifact@v4
       with:
         name: playwright-report
         path: playwright-report/
