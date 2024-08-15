@@ -4,7 +4,7 @@ module.exports = defineConfig({
   testDir: './test/playwright',
   timeout: 30000,
   retries: 1,
-  reporter: [['list'], ['json', { outputFile: 'test-results.json' }]],
+  reporter: [['html', { outputFolder: 'playwright-report' }]],
 
   use: {
     headless: true,
