@@ -10,9 +10,7 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {
-      "actualWorkers": 1
-    },
+    "metadata": {},
     "preserveOutput": "always",
     "reporter": [
       [
@@ -58,62 +56,17 @@
       "reuseExistingServer": true
     }
   },
-  "suites": [
+  "suites": [],
+  "errors": [
     {
-      "title": "example.spec.js",
-      "file": "example.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Pokedex",
-          "file": "example.spec.js",
-          "line": 3,
-          "column": 1,
-          "specs": [
-            {
-              "title": "front page can be opened",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "",
-                  "projectName": "",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 801,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-08-15T09:00:33.703Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "dd9b2edffe9b7501040c-f0e6764c98322d80f998",
-              "file": "example.spec.js",
-              "line": 4,
-              "column": 3
-            }
-          ]
-        }
-      ]
+      "message": "Error: No tests found",
+      "stack": "Error: No tests found"
     }
   ],
-  "errors": [],
   "stats": {
-    "startTime": "2024-08-15T09:00:31.480Z",
-    "duration": 4800.089,
-    "expected": 1,
+    "startTime": "2024-08-15T09:43:05.515Z",
+    "duration": 1884.4600000000003,
+    "expected": 0,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
