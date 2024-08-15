@@ -21,8 +21,16 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --force  # This step is crucial
 
+    - name: Start the server
+      run: npm start &
+      env:
+        PORT: 5001
+
+    - name: Wait for server to be ready
+      run: npx wait-on http://localhost:5001
+
     - name: Run Playwright E2E tests
-      run: npx playwright test
+      run: npx playwright test --timeout=60000  # Increased timeout for tests
 
     - name: Upload Playwright Report
       if: always()  
