@@ -1,4 +1,4 @@
-webpack.config.js
+webpack.config.mjs
 node_modules/
 dist/
 /test/playwright/
