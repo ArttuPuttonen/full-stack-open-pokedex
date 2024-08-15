@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test';
+const { test, expect } = require('@playwright/test')
 
-test.describe('Pokedex', () => {
+describe('Pokedex', () => {
   test('front page can be opened', async ({ page }) => {
-    await page.goto('http://localhost:8080')
+    await page.goto('http://localhost:5001')
     await expect(page.getByText('ivysaur')).toBeVisible()
     await expect(page.getByText('Pokémon and Pokémon character names are trademarks of Nintendo.')).toBeVisible()
   })
