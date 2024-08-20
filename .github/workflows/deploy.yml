@@ -25,5 +25,5 @@ jobs:
       run: npm install
 
     - name: Deploy to Render
-      if: ${{ github.event_name == 'push' }}
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
       run: curl -X POST ${{ secrets.RENDER_DEPLOY_URL }}
