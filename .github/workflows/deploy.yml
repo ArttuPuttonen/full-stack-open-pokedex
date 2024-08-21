@@ -25,4 +25,10 @@ jobs:
     - name: Deploy to Render
       if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
       run: curl -X POST ${{ secrets.RENDER_DEPLOY_URL }}
+
+    - name: Bump version and push tag
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+      uses: anothrNick/github-tag-action@1.70.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
     
