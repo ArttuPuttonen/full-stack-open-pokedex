@@ -44,16 +44,14 @@ jobs:
 
     - name: Notify on success
       if: success()
-      uses: rjstone/discord-webhook-notify@v1
-      with:
-        severity: info
-        details: "Build and tests succeeded!"
-        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{"content": "Build and tests succeeded!"}' \
+          ${{ secrets.DISCORD_WEBHOOK }}
 
     - name: Notify on failure
       if: failure()
-      uses: rjstone/discord-webhook-notify@v1
-      with:
-        severity: error
-        details: "Build or tests failed at commit ${{ github.sha }} by ${{ github.actor }}. Check details at: ${{ github.event.head_commit.url }}"
-        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{"content": "Build or tests failed at commit ${{ github.sha }} by ${{ github.actor }}. Check details at: ${{ github.event.head_commit.url }}"}' \
+          ${{ secrets.DISCORD_WEBHOOK }}
