@@ -2,7 +2,7 @@ name: Health Check
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Runs every hour. Adjust this as needed.
+    - cron: '0 0 1 * *'  # Runs every hour.
   workflow_dispatch:  # Allows manual triggering of the workflow.
 
 jobs:
@@ -11,15 +11,12 @@ jobs:
 
     steps:
     - name: Check website health
-      uses: patrickjahns/url-health-check-action@v1
-      with:
-        url: 'https://your-deployed-app-url.com'
-        expected-status: '200'
-        timeout: '5'  # Timeout in seconds
+      run: |
+        curl -s -o /dev/null -w "%{http_code}" --max-time 5 https://full-stack-open-pokedex-1y6i.onrender.com/ | grep 200
 
     - name: Notify on failure
       if: failure()
       run: |
         curl -X POST -H "Content-Type: application/json" \
-        -d '{"content": "Health check failed for https://full-stack-open-pokedex-1y6i.onrender.com/"}' \
+        -d '{"content": "Health check failed for https://full-stack-open-pokedex-1y6i.onrender.com/m"}' \
         ${{ secrets.DISCORD_WEBHOOK }}
